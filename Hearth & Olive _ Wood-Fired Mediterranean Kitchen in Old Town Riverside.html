@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hearth &amp; Olive | Wood-Fired Mediterranean Kitchen in Old Town Riverside</title>
+<meta name="description" content="Hearth &amp; Olive serves wood-fired Mediterranean dishes in Old Town Riverside. See the menu, order for pickup, or reserve a table online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Hearth & Olive","servesCuisine":"Mediterranean","telephone":"+1-555-010-2468","address":{"@type":"PostalAddress","streetAddress":"214 Willow Lane","addressLocality":"Riverside","addressRegion":"CA","postalCode":"92501"},"openingHours":["Tu-Th 17:00-21:30","Fr-Sa 17:00-22:30","Su 11:00-20:30"]}
+</script>
+<style>
+:root{
+  --bg:#f2f4ec; --surface:#fff; --ink:#1f2a1c; --muted:#4f5b4a; --line:#d5dac9;
+  --accent:#a62f1b; --accent-ink:#fff; --band:#23361f; --band-ink:#f6f1dc; --butter:#f1c75b;
+  --serif:"Young Serif",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141b12; --surface:#1d271a; --ink:#eef0e4; --muted:#b7c0aa; --line:#33412e;
+  --accent:#ef8a6f; --accent-ink:#1a0d08; --band:#0e150c; --band-ink:#f6f1dc; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141b12; --surface:#1d271a; --ink:#eef0e4; --muted:#b7c0aa; --line:#33412e;
+  --accent:#ef8a6f; --accent-ink:#1a0d08; --band:#0e150c; --band-ink:#f6f1dc; color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:.5rem}
+h3{font-size:1.2rem}
+p{margin:0 0 1rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.lede{color:var(--muted);max-width:60ch}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:50}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-family:var(--serif);font-size:1.3rem;text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:8px;padding:.45rem .85rem;font:500 1rem var(--sans);cursor:pointer}
+@media (max-width:760px){
+  .menu-btn{display:block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav a{display:block;padding:.8rem 0}
+}
+
+/* buttons */
+.btn{display:inline-block;font:700 1rem var(--sans);text-decoration:none;padding:.85rem 1.4rem;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.alt{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+
+/* hero */
+.hero{background:var(--band);color:var(--band-ink);padding:4rem 0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+.hero p{font-size:1.2rem;max-width:44ch;margin-top:1.2rem;opacity:.92}
+.hero .btn{background:var(--butter);border-color:var(--butter);color:#2a2208}
+.hero .btn.alt{background:transparent;color:var(--band-ink);border-color:var(--band-ink)}
+.hero svg{width:100%;height:auto;max-width:440px;justify-self:center}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:300px;order:-1}}
+
+/* menu */
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.tabs button{font:500 1rem var(--sans);padding:.55rem 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dishes{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.dish{display:grid;grid-template-columns:88px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.pic svg,.pic img{width:88px;height:88px;border-radius:12px;object-fit:cover;display:block}
+.dish .row{display:flex;justify-content:space-between;gap:1rem;font-weight:700}
+.dish p{color:var(--muted);margin:.2rem 0 .4rem;font-size:.98rem}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;border:1.5px solid var(--muted);color:var(--muted);border-radius:6px;padding:0 .4rem;margin-right:.3rem}
+.key{font-size:.9rem;color:var(--muted);margin-top:1.5rem}
+@media (max-width:760px){.dishes{grid-template-columns:1fr}}
+
+/* about / info */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:.45rem 0;border-bottom:1px solid var(--line);font-weight:400}
+th{font-weight:700}
+address{font-style:normal}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+
+/* reviews */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+blockquote{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:1.4rem}
+blockquote p{font-family:var(--serif);font-size:1.1rem;line-height:1.5}
+cite{font-style:normal;font-weight:700;font-size:.95rem}
+.stars{color:var(--accent);letter-spacing:.15em;font-size:1.1rem}
+
+/* form */
+form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f{display:flex;flex-direction:column;gap:.3rem}
+.f.full{grid-column:1/-1}
+label{font-weight:700;font-size:.95rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--muted);border-radius:8px;padding:.7rem .8rem;width:100%}
+@media (max-width:560px){form{grid-template-columns:1fr}}
+#ok{margin-top:1rem;font-weight:700;color:var(--accent)}
+footer{background:var(--band);color:var(--band-ink);padding:2rem 0;font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home">Hearth &amp; Olive</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Our story</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <h1>Wood-fired food, shared at the table.</h1>
+      <p>Mediterranean cooking over olive wood in the heart of Old Town Riverside. Come hungry, stay for dessert.</p>
+      <div class="btns">
+        <a class="btn" href="#menu">View menu</a>
+        <a class="btn alt" href="#order">Order for pickup</a>
+        <a class="btn alt" href="#reserve">Reserve a table</a>
+      </div>
+    </div>
+    <!-- Replace this illustration with a photo: <img src="your-photo.jpg" alt="..."> -->
+    <svg viewBox="0 0 400 400" role="img" aria-label="Illustration of a plate with grilled flatbread, tomatoes, olives and lemon">
+      <circle cx="200" cy="200" r="190" fill="#f1c75b" opacity=".16"/>
+      <circle cx="200" cy="205" r="150" fill="#f6f1dc"/>
+      <circle cx="200" cy="205" r="118" fill="none" stroke="#d8cfa8" stroke-width="3"/>
+      <ellipse cx="190" cy="205" rx="82" ry="62" fill="#d9a05b" transform="rotate(-18 190 205)"/>
+      <ellipse cx="190" cy="205" rx="68" ry="48" fill="#e8b873" transform="rotate(-18 190 205)"/>
+      <path d="M140 215c20-30 60-50 100-48M150 232c25-25 60-38 92-34" stroke="#b9772f" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="262" cy="150" r="22" fill="#c93a24"/><circle cx="262" cy="150" r="9" fill="#e86a4f"/>
+      <circle cx="132" cy="268" r="20" fill="#c93a24"/><circle cx="132" cy="268" r="8" fill="#e86a4f"/>
+      <ellipse cx="270" cy="262" rx="12" ry="9" fill="#4a5a2a"/><ellipse cx="248" cy="282" rx="12" ry="9" fill="#2f3a1b"/>
+      <ellipse cx="294" cy="238" rx="11" ry="8" fill="#4a5a2a"/>
+      <circle cx="300" cy="120" r="34" fill="#f5d84a"/><circle cx="300" cy="120" r="26" fill="#fbea8a"/>
+      <path d="M300 120v-26M300 120l22 13M300 120l-22 13" stroke="#f5d84a" stroke-width="3"/>
+      <path d="M118 150c10-28 32-44 54-46-6 20-20 36-54 46z" fill="#5b7a34"/>
+    </svg>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Menu</h2>
+    <p class="lede">Dishes come out as they’re ready, so order a few and share. Our kitchen handles nuts, gluten and dairy; please tell your server about any allergy.</p>
+    <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+    <div class="dishes" id="dishes" role="tabpanel" aria-live="polite"></div>
+    <p class="key"><span class="tag">V</span>Vegetarian <span class="tag">VG</span>Vegan <span class="tag">GF</span>Gluten-free <span class="tag">S</span>Spicy</p>
+  </div>
+</section>
+
+<section class="alt-bg" id="order">
+  <div class="wrap split">
+    <div>
+      <h2>Order for pickup</h2>
+      <p class="lede">Pickup orders are ready in about 25 minutes. Call us, or connect your online ordering link below.</p>
+    </div>
+    <div class="panel">
+      <p><strong>Pickup hours:</strong> Tue–Sun, from 5 pm (Sun from 11 am).</p>
+      <div class="btns" style="margin-top:0">
+        <!-- Replace # with your ordering provider link -->
+        <a class="btn" href="#order-link">Order now online</a>
+        <a class="btn alt" href="tel:+15550102468">Call (555) 010-2468</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div>
+      <h2>Our story</h2>
+      <p>Hearth &amp; Olive began in 2016 as a Saturday supper club in Marisol Vega’s backyard, built around one clay oven she and her father rebuilt brick by brick.</p>
+      <p>Today the oven sits at the center of our dining room. We cook with olive wood, buy produce from farms within an hour of Riverside, and press our own olive oil each autumn with a neighboring grove.</p>
+      <p>Everything on the menu is meant to be passed across the table.</p>
+    </div>
+    <div class="panel">
+      <h3>What guests notice first</h3>
+      <p style="margin-top:.8rem">The smell of the oven. A kitchen you can see into. Tables close enough for conversation, and bread that arrives before you’ve finished reading the menu.</p>
+      <p style="margin-bottom:0">Private dining for up to 14 guests is available on request.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="visit">
+  <div class="wrap">
+    <h2>Visit us</h2>
+    <div class="split" style="margin-top:1.5rem">
+      <div class="panel">
+        <h3>Hours</h3>
+        <table>
+          <tr><th scope="row">Monday</th><td>Closed</td></tr>
+          <tr><th scope="row">Tuesday–Thursday</th><td>5:00 pm – 9:30 pm</td></tr>
+          <tr><th scope="row">Friday–Saturday</th><td>5:00 pm – 10:30 pm</td></tr>
+          <tr><th scope="row">Sunday</th><td>11:00 am – 8:30 pm</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>Find us</h3>
+        <address style="margin:.8rem 0">214 Willow Lane<br>Old Town Riverside, CA 92501<br><a href="tel:+15550102468">(555) 010-2468</a><br><a href="mailto:hello@hearthandolive.example">hello@hearthandolive.example</a></address>
+        <p>Street parking on Willow Lane, plus a free lot behind the bakery after 5 pm.</p>
+        <a class="btn" href="https://www.openstreetmap.org/search?query=214%20Willow%20Lane%20Riverside%20CA" target="_blank" rel="noopener">Open in maps (new tab)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>What guests say</h2>
+    <div class="quotes">
+      <blockquote><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><p>The charred cauliflower alone is worth the trip. Warm room, friendly staff, and we left planning our next visit.</p><cite>Priya N., birthday dinner</cite></blockquote>
+      <blockquote><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><p>Best flatbread in the county. They handled our gluten-free and vegan guests without any fuss.</p><cite>Daniel O., weekend regular</cite></blockquote>
+      <blockquote><div class="stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div><p>Pickup was ready right on time and still hot. The lamb kofta is a repeat order in our house.</p><cite>Marta S., takeout fan</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg" id="reserve">
+  <div class="wrap split">
+    <div>
+      <h2>Reserve a table</h2>
+      <p class="lede">Tell us when you’d like to come. We confirm by email within a few hours. For parties over 8, call us at (555) 010-2468.</p>
+    </div>
+    <form id="rform">
+      <div class="f"><label for="n">Name</label><input id="n" name="name" required autocomplete="name"></div>
+      <div class="f"><label for="e">Email</label><input id="e" name="email" type="email" required autocomplete="email"></div>
+      <div class="f"><label for="d">Date</label><input id="d" name="date" type="date" required></div>
+      <div class="f"><label for="t">Time</label>
+        <select id="t" name="time"><option>5:00 pm</option><option>5:30 pm</option><option>6:00 pm</option><option>6:30 pm</option><option>7:00 pm</option><option>7:30 pm</option><option>8:00 pm</option><option>8:30 pm</option></select></div>
+      <div class="f"><label for="g">Guests</label>
+        <select id="g" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+      <div class="f"><label for="p">Phone (optional)</label><input id="p" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="f full"><label for="m">Allergies or special requests</label><textarea id="m" name="message" rows="3"></textarea></div>
+      <div class="f full"><button class="btn" type="submit">Request reservation</button><div id="ok" role="status"></div></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Hearth &amp; Olive. Sample content: replace with your own.</span>
+    <span>214 Willow Lane, Riverside · (555) 010-2468</span>
+  </div>
+</footer>
+
+<script>
+// Edit this list to change the menu. tags: V, VG, GF, S
+var MENU = {
+  "Small plates": [
+    ["Charred cauliflower","Tahini, pomegranate, toasted pine nuts, lemon.","14",["VG","GF"]],
+    ["Whipped feta","Warm honey, thyme, oven-blistered tomatoes, grilled bread.","13",["V"]],
+    ["Marinated olives","Citrus peel, fennel seed, chili.","8",["VG","GF","S"]],
+    ["Spiced lamb kofta","Yogurt, mint, cucumber relish.","16",["GF"]]
+  ],
+  "Wood-fired": [
+    ["Hearth flatbread","Olive oil, sea salt, za’atar, garlic labneh.","11",["V"]],
+    ["Wild mushroom flatbread","Taleggio, caramelized onion, rosemary.","18",["V"]],
+    ["Whole roasted branzino","Fennel, capers, charred lemon, herb oil.","34",["GF"]],
+    ["Harissa chicken","Half bird, roasted carrots, chickpea purée.","29",["GF","S"]]
+  ],
+  "Sides & salads": [
+    ["Little gem salad","Cucumber, radish, green goddess, toasted seeds.","12",["VG","GF"]],
+    ["Crispy potatoes","Rosemary salt, saffron aioli.","9",["V","GF"]],
+    ["Farro with herbs","Dried apricot, almond, preserved lemon.","10",["VG"]]
+  ],
+  "Desserts": [
+    ["Olive oil cake","Orange curd, whipped mascarpone.","10",["V"]],
+    ["Baklava ice cream sandwich","Pistachio, honey, cardamom.","11",["V"]],
+    ["Dark chocolate pot de crème","Sea salt, olive oil.","10",["V","GF"]]
+  ],
+  "Drinks": [
+    ["House lemonade","Mint, honey, sparkling water.","5",["VG","GF"]],
+    ["Hearth spritz","Aperitivo, orange, prosecco.","13",["VG","GF"]],
+    ["Turkish coffee","Cardamom, served with a sweet.","5",["VG","GF"]]
+  ]
+};
+// Placeholder dish art. To use a real photo, add its URL as a 5th item in a dish: [name, text, price, tags, "photo.jpg"]
+var PAL=[["#c93a24","#f1c75b","#5b7a34"],["#d9a05b","#c93a24","#4a5a2a"],["#5b7a34","#f5d84a","#c93a24"],["#8a4b2a","#f6f1dc","#5b7a34"],["#e8b873","#7a2b1a","#4a5a2a"],["#f1c75b","#a62f1b","#2f3a1b"]];
+function art(d){var h=0,i;for(i=0;i<d[0].length;i++)h=(h*31+d[0].charCodeAt(i))%997;var p=PAL[h%PAL.length],r=h%40;
+ return '<svg viewBox="0 0 120 120" role="img" aria-label="'+d[0]+'"><circle cx="60" cy="60" r="58" fill="#f6f1dc" stroke="#d8cfa8" stroke-width="2"/><ellipse cx="58" cy="62" rx="34" ry="26" fill="'+p[0]+'" transform="rotate('+(r-20)+' 58 62)"/><ellipse cx="58" cy="62" rx="24" ry="17" fill="'+p[1]+'" opacity=".85" transform="rotate('+(r-20)+' 58 62)"/><circle cx="86" cy="40" r="8" fill="'+p[2]+'"/><circle cx="34" cy="86" r="7" fill="'+p[2]+'"/><circle cx="88" cy="84" r="6" fill="'+p[1]+'"/></svg>';}
+var tabs = document.getElementById("tabs"), box = document.getElementById("dishes");
+function show(cat){
+  Array.prototype.forEach.call(tabs.children, function(b){ b.setAttribute("aria-selected", b.textContent===cat); });
+  box.innerHTML = MENU[cat].map(function(d){
+    return '<div class="dish"><div class="pic">'+(d[4]?'<img src="'+d[4]+'" alt="'+d[0]+'" loading="lazy">':art(d))+'</div><div><div class="row"><span>'+d[0]+'</span><span>$'+d[2]+'</span></div><p>'+d[1]+'</p>'+
+      d[3].map(function(t){return '<span class="tag">'+t+'</span>';}).join("")+'</div></div>';
+  }).join("");
+}
+Object.keys(MENU).forEach(function(cat,i){
+  var b = document.createElement("button");
+  b.type="button"; b.setAttribute("role","tab"); b.textContent=cat;
+  b.onclick=function(){show(cat)};
+  tabs.appendChild(b);
+});
+show(Object.keys(MENU)[0]);
+
+var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+btn.onclick = function(){ var o = nav.classList.toggle("open"); btn.setAttribute("aria-expanded", o); };
+nav.onclick = function(e){ if(e.target.tagName==="A"){ nav.classList.remove("open"); btn.setAttribute("aria-expanded","false"); } };
+
+var dt = document.getElementById("d"); dt.min = new Date().toISOString().slice(0,10);
+// Demo only: connect this to your reservation service or form backend.
+document.getElementById("rform").onsubmit = function(e){
+  e.preventDefault();
+  document.getElementById("ok").textContent = "Thanks, "+document.getElementById("n").value+". Your request is in. We’ll confirm by email.";
+  this.reset();
+};
+</script>
+</body>
+</html>
